@@ -4,6 +4,7 @@ title = "Hugo Blog"
 
 [taxonomies]
   tag = "tags"
+  categories = "categories"
 
 [permalinks]
   blog = "/:filename/"
@@ -26,6 +27,12 @@ title = "Hugo Blog"
     pre = "tag"
     url = "/tags/"
     weight = 3
+  [[menu.main]]
+    name = "Categories"
+    pre = "book"
+    url = "/categories/"
+    weight = 4
+    
 
 [params]
   containerMaxWidth = "700px"
