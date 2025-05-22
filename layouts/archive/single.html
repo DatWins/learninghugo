@@ -1,38 +1,32 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  <article
+    class="px-6 mx-auto mb-16 prose text-gray-700 justify-self-center sm:px-4 md:px-0 dark:prose-dark"
+  >
+    <h1 class="text-center font-light text-5xl m-0">{{ .Title }}</h1>
+    <div class="w-48 m-auto my-8 border-accent-400 border-2 rounded-sm"></div>
+    {{ .Content }}
 
-  // Display actual content, if available 
-  {{ .Content }}
-
-  // Group all pages by year
-  {{- range (.Site.RegularPages.GroupByDate "2006") -}}
-    // Take only pages of type "post" into account
-    {{- $posts := (where .Pages "Type" "post") -}}
-    {{- $posts_count := len $posts -}}
-    // .Key is the current year
-    // Check if it is an actual year and it contains any posts
-    {{ if and (gt .Key 1) (gt $posts_count 0) }}
-      // Display the year
-      <h2>{{ .Key }}</h2>
-      // Create a ul element containing all posts ...
-      <ul>
-        // ... and iterate over all pages of type "post"
-        {{ range (where .Pages "Type" "post") }}
-          // Skip hidden posts
-          {{ if (ne .Params.hidden true) }}
-            <li>
-              // Display the post's date
-              <span>
-                {{ .Date.Format "Jan 02" }}
-              </span>
-              // Display a link with the post's title
-              <a href="{{ .RelPermalink }}">
-                <span>{{ .Title }}</span>
-              </a>
-            </li>
+    {{ $type := .Params.archivetype }}
+    {{ range (.Site.RegularPages.GroupByDate "2006") }}
+      {{ $posts := (where .Pages "Type" $type) }}
+      {{ $posts_count := len $posts }}
+      {{ if and (gt .Key 1) (gt $posts_count 0) }}
+        <h2>{{ .Key }}</h2>
+        <ul class="list-none pl-0">
+          {{ range (where .Pages "Type" $type) }}
+            {{ if (ne .Params.hidden true) }}
+              <li class="flex space-x-2 items-baseline pl-0">
+                <span class="whitespace-nowrap font-mono">
+                  {{ .Date.Format "Jan 02" }}
+                </span>
+                <a href="{{ .RelPermalink }}">
+                  <span>{{ .Title }}</span>
+                </a>
+              </li>
+            {{ end }}
           {{ end }}
-        {{ end }}
-      </ul>
+        </ul>
+      {{ end }}
     {{ end }}
-  {{ end }}
+  </article>
 {{ end }}
