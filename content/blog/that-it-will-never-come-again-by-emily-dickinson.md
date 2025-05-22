@@ -3,7 +3,8 @@ title: "That it will never come again by Emily Dickinson"
 date: 2020-01-12T23:24:54-06:00
 tags: ["poetry", "time"]
 draft: false
-category: ["love"]
+category: 
+   - love
 ---
 
 That it will never come again  
