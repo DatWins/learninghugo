@@ -32,7 +32,11 @@ title = "Hugo Blog"
     pre = "book"
     url = "/categories/"
     weight = 4
-    
+  [[menu.main]]
+    name = "Archive"
+    pre = "eye"
+    url = "/archives/"
+    weight = 4
 
 [params]
   containerMaxWidth = "700px"
