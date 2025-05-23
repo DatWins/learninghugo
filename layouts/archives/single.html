@@ -1,0 +1,10 @@
+{{ $year := .Page.Params.year }}
+{{ $month := .Page.Params.month }}
+
+<h1>Archive for {{ $year }} / {{ $month }}</h1>
+
+<ul>
+  {{ range .Pages }}
+    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+  {{ end }}
+</ul>
