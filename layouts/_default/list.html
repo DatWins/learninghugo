@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <h1>{{ .Title }}</h1>
-{{ range .Pages.ByPublishDate.Reverse }}
+{{ range .Pages.GroupByDate "January 2006" }}
 <p>
   <a class="font-125" href="{{ .RelPermalink }}">{{ .Title }}</a>
   <br>
