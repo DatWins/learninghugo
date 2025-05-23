@@ -1,9 +1,0 @@
-{{ range .Pages.GroupByDate "January 2006" }}
-  <p>{{ .Key }}</p>
-  <ul>
-    {{ range .Pages }}
-      <li><a class="font-125" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-    {{ end }}
-  </ul>
-{{ end }}
-
