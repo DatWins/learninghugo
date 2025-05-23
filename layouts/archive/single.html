@@ -1,3 +1,5 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
 {{ range .Pages.GroupByDate "January 2006" }}
   <p>{{ .Key }}</p>
   <ul>
