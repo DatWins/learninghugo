@@ -5,7 +5,15 @@ title = "Hugo Blog"
 [taxonomies]
   tag = "tags"
   categories = "categories"
-  
+
+[taxonomies]
+  year = "year"
+  month = "month"
+
+[permalinks]
+      post = "/:year/:month/:slug/"
+      year = "/:year/"
+      month = "/:year/:month/"
 
 [permalinks]
   blog = "/:filename/"
