@@ -2,7 +2,9 @@
 
 <h1>{{ .Title }}</h1>
 {{ range .Pages.GroupByDate "January 2006" }}
-<p>
+<p> {{ .Key }}</p>
+  <ul>
+ {{ range .Pages }}
   <a class="font-125" href="{{ .RelPermalink }}">{{ .Title }}</a>
   <br>
   {{ partial "date-and-tags.html" . }}
