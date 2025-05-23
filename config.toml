@@ -36,7 +36,7 @@ title = "Hugo Blog"
   [[menu.main]]
     name = "Archive"
     pre = "eye"
-    url = "/archives/"
+    url = "/archive/"
     weight = 5
 
 [params]
