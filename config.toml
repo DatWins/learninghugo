@@ -5,7 +5,7 @@ title = "Hugo Blog"
 [taxonomies]
   tag = "tags"
   categories = "categories"
-  archives = "archives"
+  
 
 [permalinks]
   blog = "/:filename/"
