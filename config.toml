@@ -5,15 +5,10 @@ title = "Hugo Blog"
 [taxonomies]
   tag = "tags"
   categories = "categories"
-  year = "year"
-  month = "month"
-
+  
 [permalinks]
   blog = "/:filename/"
-  post = "/:year/:month/:slug/"
-  year = "/:year/"
-  month = "/:year/:month/"
-
+  
 # See https://feathericons.com/
 # The value of pre is the icon name
 [menu]
