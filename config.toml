@@ -1,10 +1,11 @@
-baseURL = "https://example.com"
+baseURL = "https://lustrous-taffy-f0c5f1.netlify.app/categories/"
 languageCode = "en-us"
 title = "Hugo Blog"
 
 [taxonomies]
   tag = "tags"
   categories = "categories"
+  archives = "archives"
 
 [permalinks]
   blog = "/:filename/"
